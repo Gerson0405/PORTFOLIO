@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Navegação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+        }
+
+        .container {
+            padding: 10%;
+            text-align: center;
+            position: relative;
+        }
+
+        .circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #9d12cc;
+            border-bottom-right-radius: 50%;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            z-index: 1;
+        }
+
+        .nav-item {
+            font-size: 18px;
+            font-weight: 500;
+            color: black;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        .content {
+            margin-top: 25vh;
+            z-index: 1;
+            position: relative;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 800;
+            color: black;
+        }
+
+        .paragraph {
+            color: black;
+            text-align: center;
+        }
+
+        .link {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #9d12cc;
+            color: white;
+            font-weight: 500;
+            border-radius: 50px;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            background-color: #7d0f9f;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="container">
+        <div class="header">
+            <a href="#cadastro" class="nav-item">Cadastro</a>
+            <a href="#login" class="nav-item">Login</a>
+            <a href="#textos" class="nav-item">Textos</a>
+            <a href="#chat" class="nav-item">Chat</a>
+        </div>
+        <div class="content">
+            <h1 class="title">BEM VINDO AO NOSSO APP</h1>
+            <p class="paragraph">
+                Maria Clara de Andrade Mendes<br>
+                Érick Gerson Araújo de Sousa
+            </p>
+            <a href="#" class="link">VEJA MAIS</a>
+        </div>
+    </div>
+</body>
+</html>

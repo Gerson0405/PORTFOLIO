@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Screen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffbdfd;
+            margin: 0;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            background-color: #e4f1cb;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+            max-width: 70%;
+        }
+
+        .sent {
+            align-self: flex-end;
+            background-color: #bde0ff;
+        }
+
+        .input-container {
+            display: flex;
+        }
+
+        .input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container" id="chatContainer">
+        <div class="message">Olá, nós somos uma plataforma de atendimento psicológico e estamos aqui para ajudar você! Você gostaria de conversar com um especialista através do chat?</div>
+        <div class="message sent">Olá, sim eu gostaria de conversar com um especialista.</div>
+        <div class="message">Certo, iremos encaminhar um psicólogo para conversar com você.</div>
+        <div class="message sent">Ok.</div>
+    </div>
+
+    <div class="input-container">
+        <input type="text" id="messageInput" class="input" placeholder="Digite sua mensagem..." onkeydown="handleSend(event)">
+    </div>
+
+    <script>
+        function handleSend(event) {
+            if (event.key === 'Enter') {
+                const input = document.getElementById('messageInput');
+                const messageText = input.value.trim();
+                if (messageText) {
+                    const chatContainer = document.getElementById('chatContainer');
+                    const newMessage = document.createElement('div');
+                    newMessage.classList.add('message', 'sent');
+                    newMessage.innerText = messageText;
+                    chatContainer.appendChild(newMessage);
+                    input.value = '';
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
